@@ -20,9 +20,12 @@ const port = process.env.PORT || 8080
 const api_prefix = process.env.API_PREFIX
 //routes path
 const auth = require('./routes/auth')
+//routes product
+const product = require('./routes/product')
 
 //routes middelwares
 app.use(api_prefix + 'auth',auth)
+app.use(api_prefix + 'product',product)
 
 app.get('/', function(req,res){
     res.send('Welcome')
